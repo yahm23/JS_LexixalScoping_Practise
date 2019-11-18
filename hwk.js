@@ -145,44 +145,45 @@
 // was mr green, woohoo
 
 
-
-const scenario = {
-  murderer: 'Mrs. Peacock',
-  room: 'Conservatory',
-  weapon: 'Lead Pipe'
-};
-
-const changeScenario = function() {
-  scenario.murderer = 'Mrs. Peacock';
-  scenario.room = 'Dining Room';
-
-  const plotTwist = function(room) {
-    if (scenario.room === room) {
-      scenario.murderer = 'Colonel Mustard';
-    }
-
-    const unexpectedOutcome = function(murderer) {
-      if (scenario.murderer === murderer) {
-        scenario.weapon = 'Candle Stick';
-      }
-    }
-
-    unexpectedOutcome('Colonel Mustard');
-  }
-
-  plotTwist('Dining Room');
-}
-
-const declareWeapon = function() {
-  return `The weapon is ${scenario.weapon}.`
-}
-
-changeScenario();
-const verdict = declareWeapon();
-console.log(verdict);
+//
+// const scenario = {
+//   murderer: 'Mrs. Peacock',
+//   room: 'Conservatory',
+//   weapon: 'Lead Pipe'
+// };
+//
+// const changeScenario = function() {
+//   scenario.murderer = 'Mrs. Peacock';
+//   scenario.room = 'Dining Room';
+//
+//   const plotTwist = function(room) {
+//
+//     if (scenario.room === room) {
+//       scenario.murderer = 'Colonel Mustard';
+//     }
+//
+//     const unexpectedOutcome = function(murderer) {
+//       if (scenario.murderer === murderer) {
+//         scenario.weapon = 'Candle Stick';
+//       }
+//     }
+//
+//     unexpectedOutcome('Colonel Mustard');
+//   }
+//
+//   plotTwist('Dining Room');
+// }
+//
+// const declareWeapon = function() {
+//   return `The weapon is ${scenario.weapon}.`
+// }
+//
+// changeScenario();
+// const verdict = declareWeapon();
+// console.log(verdict);
 
 //8 Output will be: cornel mustard with the lead pipe
-//wrong, not to sure why it would be Candlestick
+//wrong, not to sure why it would be Candlestick. How does plotTwist run before unexpectedOutcome? even though it comes after
 
 
 
@@ -200,3 +201,34 @@ console.log(verdict);
 // console.log(verdict);
 
 //9 Output will be: professor plum
+
+
+//Extensions (not working, confused on scope)
+
+const scene ={
+  murderer:"plum plum",
+  weapon: "cheese grater",
+  room: "dining room"
+}
+var test = 0
+const changeScene = function(){
+  scene.murderer = "big boi";
+  scene.weapon = "pillow"
+
+  // var test = 0
+
+  const changeroom = function(){
+    return "yolo"
+    if (1 === 1){
+      scene.room = "Hall"
+      //return "yolo"
+    }
+
+
+  }
+  var test = changeroom()
+  // var test2 = changeroom()
+}
+var test = changeroom()
+console.log("test",test);
+// console.log("test2",test2);
